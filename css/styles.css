@@ -12,8 +12,12 @@ a {
 }
 
 a:hover {
+  color: #000000;
   font-size: 16px;
-  color: #fff;
+  line-height: 1.2;
+  font-family: "arial";
+  font-weight: normal;
+  letter-spacing: 0;
   background-color: #4f46e5;
 }
 
@@ -213,4 +217,322 @@ nav > ul li:hover ul {
   /*  position: relative; */
   bottom: 24px;
   right: 24px;
+}
+
+/* transform */
+.line {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.original,
+.box {
+  border-radius: 6px;
+}
+
+/* o	li:first-child {}  - პირველი შვილი
+o	li:last-child {}   - ბოლო შვილი
+o	li:only-child {}  - ერთადერთი შვილი
+o	li:nth-child(2) {}  - მეორე ელემენტი
+o	li:nth-child(odd) {} - კენტი ელემენტები
+o	li:nth-child(even) {}  - ლუწი ელემენტები */
+.original {
+  background: #eaeaed;
+  border: 1px solid #cecfd5;
+  float: left;
+  margin: 50px 50px;
+}
+
+.original:nth-of-type(2) {
+  background: #e97171;
+}
+
+.original:nth-of-type(4n + 1) {
+  background: #c300ca;
+}
+
+.original:nth-of-type(2n + 1) {
+  background: #c300ca;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  background: #2db34a;
+  text-align: center;
+  margin: 50px 50px;
+}
+
+/* .box[title^="m"] {
+  background: #ae004e;
+}
+.box[title*="k"] {
+  background: #9fae00;
+} */
+/**/
+.box-1:hover {
+  transform: rotate(20deg);
+}
+
+.box-2:hover {
+  transform: rotate(-20deg);
+}
+
+.box-rotate {
+  transform: rotate(45deg);
+}
+
+.box-rotate span {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+/**/
+.box-3:hover {
+  /*  transform:scale(-0.75); */
+  transform: scale(0.75);
+}
+
+.box-4:hover {
+  transform: scale(1.75);
+  transform: scale(2.75);
+}
+
+/**/
+.box-5:hover {
+  transform: translateX(-10px);
+}
+
+.box-6:hover {
+  transform: translateY(25%);
+}
+
+.box-7:hover {
+  transform: translate(-10px, 25%);
+}
+
+/**/
+.box-8:hover {
+  transform: skewX(-5deg);
+}
+
+.box-9:hover {
+  transform: skewY(-25deg);
+}
+
+.box-10:hover {
+  transform: skew(5deg, -25deg);
+}
+
+.box-skew {
+  transform: skewX(10deg);
+}
+
+.box-skew span {
+  display: inline-block;
+  transform: skewX(-10deg);
+}
+
+/**/
+.box-11:hover {
+  transform: rotate(25deg) scale(0.75);
+}
+
+.box-12:hover {
+  transform: skew(5deg, -25deg) translate(20px);
+}
+
+.box {
+  background: #2db34a;
+  height: 95px;
+  line-height: 95px;
+  text-align: center;
+  width: 95px;
+  background: red;
+  background: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+}
+
+.box-1 {
+  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+  background: linear-gradient(-65deg, red, blue); /* Standard syntax */
+}
+
+.box-2 {
+  background: linear-gradient(to right, red 70%, blue); /* Standard syntax */
+}
+
+.box-3 {
+  /* background: linear-gradient(to bottom right, silver , pink); */ /* Standard syntax */
+}
+
+.box-4 {
+  /* background: linear-gradient(to left top, silver , pink); */ /* Standard syntax */
+}
+
+.box-5 {
+  /* background: radial-gradient(red, green, blue); */ /* Standard syntax */
+  /* background-image: radial-gradient(circle, red, yellow, green); */ /*circle or ellipse*/
+  /*   background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+   background-image: radial-gradient(closest-side at 60% 55%, red, green, blue); */
+}
+
+/* transition */
+.transitions {
+  width: 100%;
+  height: 100%;
+  border: 1px solid yellow;
+  background: green;
+}
+
+.transitions div {
+  width: 100px;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  margin: 50px auto;
+  border-radius: 6px;
+  background: #d10000;
+  transition: color 3s ease 5s;
+}
+
+.transitions:hover div {
+  width: 850px;
+  color: #2db34a;
+}
+
+.transitions div.ease {
+  /*  transition: all 3s ease 5s; */
+  /*transition-delay: 3s;
+  transition-duration: 3s;
+  transition-property: all;
+  transition-timing-function: ease;*/
+}
+
+.transitions div.linear {
+  transition: all 8s linear 0s;
+}
+
+.transitions div.easein {
+  transition: all 13s ease-in 1s;
+}
+
+.transitions div.easeout {
+  transition: all 15s ease-out 2s;
+}
+
+.transitions div.easeinout {
+  transition: all 3s ease-in-out 5s;
+}
+
+/* animation */
+.animation,
+.animation > .box {
+  border-radius: 6px;
+}
+
+.animation {
+  width: 50%;
+  height: 500px;
+  background: #eaeaed;
+  border: 1px solid #cecfd5;
+  margin: 150px auto;
+}
+
+.animation > .box {
+  display: block;
+  width: 60%;
+  height: 350px;
+  line-height: 350px;
+  text-align: center;
+  margin: 75px auto;
+  background: #2db34a;
+  /*opacity: 0;
+  animation*/
+  animation-name: myAnimation3;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite; /*infinite/ 1,2..n  */
+  animation-direction: alternate; /* reverse,alternate,alternate-reverse */
+  animation-timing-function: linear; /* ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n) */
+  animation-fill-mode: forwards; /* forwards, backwards, both */
+}
+
+@keyframes myAnimation1 {
+  from {
+    transform: rotate(0deg);
+    background: pink;
+  }
+  to {
+    transform: rotate(360deg);
+    background: linear-gradient(to left top, red, orange, yellow, green, blue, indigo, violet);
+  }
+}
+@keyframes myAnimation2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+    background: #000;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 1;
+    background: yellow;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes myAnimation3 {
+  0% {
+    background: pink;
+  }
+  100% {
+    background: yellow;
+  }
+}
+.test-box {
+  background: #2db34a;
+  height: 700px;
+  line-height: 500px;
+  text-align: center;
+  width: 500px;
+  /* background: red;
+  background: -webkit-linear-gradient(red,orange,yellow,green,blue,indigo,violet);
+  background: -o-linear-gradient(red,orange,yellow,green,blue,indigo,violet);
+  background: -moz-linear-gradient(red,orange,yellow,green,blue,indigo,violet); */
+  background: linear-gradient(to left top, red, orange, yellow, green, blue, indigo, violet);
+}
+
+.test-box {
+  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+  background: linear-gradient(-65deg, red, blue); /* Standard syntax */
+}
+
+.test-box {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 50px, rgba(0, 0, 0, 0)); /* Standard syntax */
+}
+
+.box-3 {
+  background: linear-gradient(to bottom right, silver, pink); /* Standard syntax */
+}
+
+.box-4 {
+  background: linear-gradient(to left top, silver, pink); /* Standard syntax */
+}
+
+.test-box {
+  background: radial-gradient(red, green, blue); /* Standard syntax */
+  background-image: radial-gradient(circle, red, yellow, green); /*circle or ellipse*/
+  /* background-image: repeating-radial-gradient(red, yellow 10%, green 15%);*/
+  background-image: radial-gradient(closest-side at 60% 55%, red, green, blue);
 }/*# sourceMappingURL=styles.css.map */
