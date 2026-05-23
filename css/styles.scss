@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "typography" as *;
 @use "functions" as *;
+@use "media" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ+Guides&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap");
 
@@ -38,6 +39,12 @@ li {
     url("../fonts/alk-life-webfont.ttf") format("truetype");
 }
 
+fieldset {
+  border: 0;
+}
+legend {
+  display: none;
+}
 /* End of global styles */
 #header {
   background: linear-gradient(
@@ -45,6 +52,9 @@ li {
     rgba(254, 181, 44, 0.5) 30%,
     rgba(255, 255, 255, 0)
   );
+  @include respond-to(768px) {
+    background: pink;
+  }
 }
 h1 {
   width: Rem(185);
@@ -694,10 +704,10 @@ Flex Items - flex-grow, flex-shrink, flex-basis, order
 }
 
 body {
-  background: pink;
+  /* background: pink; */
 
   /* desktop first */
-  @media screen and (max-width: 1366px) {
+  /*  @media screen and (max-width: 1366px) {
     background: #64ff9f;
   }
 
@@ -711,9 +721,9 @@ body {
       border: 2px solid blue;
     }
   }
-  /* @include for-desktop-up {
+  @include for-desktop-up {
     background: #64ff9f;
-  } */
+  }
 
   @media screen and (max-width: 1024px) {
     background: #c300ca;
@@ -725,10 +735,10 @@ body {
 
   @media screen and (max-width: 480px) {
     background: #71e971;
-  }
+  } */
 
   /* mobile first */
-  @media screen and (min-width: 360px) {
+  /* @media screen and (min-width: 360px) {
     background: #c771e9;
   }
   @media screen and (min-width: 480px) {
@@ -742,7 +752,7 @@ body {
   }
   @media screen and (min-width: 1366px) {
     background: #8171e9;
-  }
+  } */
 }
 
 /* @media screen and (max-width: 1366) {
@@ -891,4 +901,10 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+}
+
+input,
+select,
+textarea {
+  outline: none;
 }

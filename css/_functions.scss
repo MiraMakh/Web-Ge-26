@@ -9,3 +9,11 @@
 @function LineHeight($fontSize, $LineHeight) {
   @return ($LineHeight / $fontSize);
 }
+
+@function font($title: false) {
+  @if title == true {
+    @return "arial";
+  } @else {
+    @return "sylfaen";
+  }
+}

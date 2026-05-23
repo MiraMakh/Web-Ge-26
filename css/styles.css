@@ -59,9 +59,22 @@ li {
   src: url("../fonts/alk-life-webfont.eot"); /* IE9 Compat Modes */
   src: url("../fonts/alk-life-webfont.woff2") format("woff2"), url("../fonts/alk-life-webfont.woff") format("woff"), url("../fonts/alk-life-webfont.ttf") format("truetype");
 }
+fieldset {
+  border: 0;
+}
+
+legend {
+  display: none;
+}
+
 /* End of global styles */
 #header {
   background: linear-gradient(red 10%, rgba(254, 181, 44, 0.5) 30%, rgba(255, 255, 255, 0));
+}
+@media screen and (max-width: 768px) {
+  #header {
+    background: pink;
+  }
 }
 
 h1 {
@@ -681,71 +694,53 @@ Flex Items - flex-grow, flex-shrink, flex-basis, order
 }
 
 body {
-  background: pink;
+  /* background: pink; */
   /* desktop first */
-}
-@media screen and (max-width: 1366px) {
-  body {
+  /*  @media screen and (max-width: 1366px) {
     background: #64ff9f;
   }
-}
-@media screen and (max-height: 480px) and (orientation: landscape) {
-  body div {
-    border: 2px solid blue;
+
+  @media screen and (max-height: 480px) and (orientation: landscape) {
+    div {
+      border: 2px solid blue;
+    }
   }
-}
-@media screen and (max-height: 480px), (orientation: landscape) {
-  body div {
-    border: 2px solid blue;
+  @media screen and (max-height: 480px), (orientation: landscape) {
+    div {
+      border: 2px solid blue;
+    }
   }
-}
-body {
-  /* @include for-desktop-up {
+  @include for-desktop-up {
     background: #64ff9f;
-  } */
-}
-@media screen and (max-width: 1024px) {
-  body {
+  }
+
+  @media screen and (max-width: 1024px) {
     background: #c300ca;
   }
-}
-@media screen and (max-width: 768px) {
-  body {
+
+  @media screen and (max-width: 768px) {
     background: #e97171;
   }
-}
-@media screen and (max-width: 480px) {
-  body {
+
+  @media screen and (max-width: 480px) {
     background: #71e971;
-  }
-}
-body {
+  } */
   /* mobile first */
-}
-@media screen and (min-width: 360px) {
-  body {
+  /* @media screen and (min-width: 360px) {
     background: #c771e9;
   }
-}
-@media screen and (min-width: 480px) {
-  body {
+  @media screen and (min-width: 480px) {
     background: #71d3e9;
   }
-}
-@media screen and (min-width: 768px) {
-  body {
+  @media screen and (min-width: 768px) {
     background: #8971e9;
   }
-}
-@media screen and (min-width: 1024px) {
-  body {
+  @media screen and (min-width: 1024px) {
     background: #d571e9;
   }
-}
-@media screen and (min-width: 1366px) {
-  body {
+  @media screen and (min-width: 1366px) {
     background: #8171e9;
-  }
+  } */
 }
 
 /* @media screen and (max-width: 1366) {
@@ -866,4 +861,9 @@ body {
 }
 @media screen and (min-width: 1024px) {
   /* selector{} */
+}
+input,
+select,
+textarea {
+  outline: none;
 }/*# sourceMappingURL=styles.css.map */

@@ -16,7 +16,94 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <section class="center container">
+    <header id="header" class="header">
+      <div class="center">
+        <h1>
+          <a href="index.html">
+            <img src="images/Vector.png" alt="SELHONO logo" />
+          </a>
+          <a href="index.html"> SELHONO </a>
+        </h1>
+        <nav id="nav" class="mainMenu">
+          <ul>
+            <li><a href="index.html">მთავარი</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contac</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- 
+        •	text -> ჩვეულებრივი ტექსტი
+•	password -> პაროლი (დამალული ტექსტი)
+•	email -> ელ-ფოსტა
+•	tel -> ტელეფონის ნომერი
+•	url -> ვებ მისამართი
+•	search -> საძიებო ველი
+•	number -> რიცხვი
+•	date -> თარიღი
+•	time -> დრო
+•	month -> თვე
+•	week -> კვირა
+•	datetime-local -> თარიღი + დრო
+•	checkbox -> მრავალი არჩევანი
+•	radio -> ერთი არჩევანი
+•	range -> სლაიდერი
+•	color -> ფერის ამრჩევი
+•	submit -> ფორმის გაგზავნა
+•	reset -> ფორმის გასუფთავება
+•	button -> ჩვეულებრივი ღილაკი
+•	file -> ფაილის ატვირთვა
+
+      -->
+      <form>
+        <fieldset>
+          <legend>პერსონალური მონაცემები</legend>
+          <h2>პერსონალური მონაცემები</h2>
+          <label for="firstName">სახელი და გვარი</label>
+          <input
+            type="text"
+            placeholder="სახელი და გვარი"
+            name="firstName"
+            id="firstName"
+          />
+          <!-- <label>
+            სახელი <input type="text" placeholder="სახელი" name="firstName"
+          /></label> -->
+          <label for="gender">აირჩიეთ სქესი</label>
+          <select id="gender" name="gender">
+            <option value="მდედრობითი">მდედრობითი</option>
+            <option value="მდედრობითი">მამრობითი</option>
+            <option value="მდედრობითი">სხვა</option>
+          </select>
+          <label>ატვირთეთ სურათი</label>
+          <input type="file" ame="file" />
+        </fieldset>
+        <fieldset>
+          <legend>განათლება</legend>
+          <h2>განათლება</h2>
+          <label for="bach">ბაკალავრი</label>
+          <input type="radio" name="studentStatus" value="bach" id="bach" />
+          <label for="mag">მაგისტრი</label>
+          <input type="radio" name="studentStatus" value="mag" id="mag" />
+          <label for="PhD">დოქტორი</label>
+          <input type="radio" name="studentStatus" value="PhD" id="PhD" />
+
+          <label for="color">აირჩიეთ დიპლომის ფერი</label>
+          <input type="color" name="color" id="color" />
+
+          <input type="search" placeholder="ჩაწერე საძიებო სიტყვა" />
+          <input type="reset" value="წაშალე ფორმა" />
+          <input type="submit" value="გაგზავნე მონაცემბი" />
+          <!-- <button type="submit">გაგზავნე მონაცემბი</button> -->
+        </fieldset>
+      </form>
+    </main>
+    <!-- <section class="center container">
       <div class="item item--1">item 1</div>
       <div class="item item--2">item 2</div>
       <div class="item item--3">item 3</div>
@@ -30,6 +117,7 @@
       <div class="item item--3">aside</div>
       <div class="item item--4">promo</div>
       <div class="item item--5">footer</div>
-    </section>
+    </section> -->
+    <script src="js/script.js"></script>
   </body>
 </html>
