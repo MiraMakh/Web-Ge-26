@@ -1,5 +1,27 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ+Guides&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap");
+/* @mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+} */
+/* .header-title {  
+   font-size: 2rem;  
+
+   @include for-phone-only {    
+      font-size: 1rem; 
+   }
+} */
 /* global styles */
 * {
   margin: 0;
@@ -535,4 +557,313 @@ o	li:nth-child(even) {}  - ლუწი ელემენტები */
   background-image: radial-gradient(circle, red, yellow, green); /*circle or ellipse*/
   /* background-image: repeating-radial-gradient(red, yellow 10%, green 15%);*/
   background-image: radial-gradient(closest-side at 60% 55%, red, green, blue);
+}
+
+/* flex */
+/* Flex Container და Flex Items
+Main Axis(მთავარი ღერძი) და Cross Axis(მკვეთი ღერძი)
+flex-direction
+flex-wrap და flex-flow
+justify-content
+align-items და align-self
+Flex Items - flex-grow, flex-shrink, flex-basis, order
+ */
+.container {
+  display: flex;
+  width: 64.375%;
+  height: 500px;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column;
+  flex-direction: row; */
+  /* flex-direction: row-reverse;
+  flex-direction: column;
+  flex-direction: column-reverse; */
+  /*  justify-content: flex-end; */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: center; */
+  /*  margin: 20px; */
+  /*   align-items: flex-end; */
+  align-items: center;
+  gap: 32px;
+  background: pink;
+}
+
+.container .item {
+  width: 40px;
+  /* flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 385px; */
+  background: #ffc;
+}
+
+.container .item--2 {
+  order: -1;
+  background: rgb(204, 213, 255);
+}
+
+.container .item--3 {
+  order: 3;
+  background: rgb(204, 213, 255);
+}
+
+.container .item--4 {
+  order: 1;
+  background: rgb(204, 213, 255);
+}
+
+.container .item--5 {
+  order: 2;
+  align-self: flex-end;
+  background: rgb(204, 213, 255);
+}
+
+/* grid */
+.container-grid {
+  display: grid;
+  /* grid-template-rows:50px 50px; */
+  /* e.g. 
+      min-content 1fr min-content
+      100px 1fr max-content
+  */
+  /* grid-template-columns: 250px 1fr 2fr; */
+  /* e.g. 
+      1fr 1fr
+      minmax(10px, 1fr) 3fr
+      repeat(5, 1fr)
+      50px auto 100px 1fr
+  */
+  /* row-gap: 50px;
+  column-gap: 50px;
+  gap: 30px; */
+  /* justify-items:center;
+  align-items:center */
+  grid-template-areas: "item--1 item--1 item--1" "item--2 . item--3" "item--2 . item--3" "item--4 . item--3" "item--5 item--5 item--5";
+}
+@media print {
+  .container-grid {
+    display: none;
+  }
+}
+
+.container-grid .item {
+  background: rgb(224, 204, 255);
+}
+
+.container-grid .item--1 {
+  grid-area: item--1;
+  /* grid-column: 1 / 3; */
+  background: #ffc;
+}
+
+.container-grid .item--2 {
+  /* grid-column: 1 / 3; */
+  grid-area: item--2;
+  background: rgb(204, 218, 255);
+}
+
+.container-grid .item--3 {
+  grid-area: item--3;
+  /* grid-column: 1 / 3; */
+  background: rgb(243, 204, 255);
+}
+
+.container-grid .item--4 {
+  grid-area: item--4;
+  /*  grid-column: 1 / 3; */
+  background: rgb(255, 204, 213);
+}
+
+.container-grid .item--5 {
+  grid-area: item--5;
+  /* grid-column: 1 / 3; */
+  background: rgb(255, 231, 204);
+}
+
+body {
+  background: pink;
+  /* desktop first */
+}
+@media screen and (max-width: 1366px) {
+  body {
+    background: #64ff9f;
+  }
+}
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  body div {
+    border: 2px solid blue;
+  }
+}
+@media screen and (max-height: 480px), (orientation: landscape) {
+  body div {
+    border: 2px solid blue;
+  }
+}
+body {
+  /* @include for-desktop-up {
+    background: #64ff9f;
+  } */
+}
+@media screen and (max-width: 1024px) {
+  body {
+    background: #c300ca;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    background: #e97171;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    background: #71e971;
+  }
+}
+body {
+  /* mobile first */
+}
+@media screen and (min-width: 360px) {
+  body {
+    background: #c771e9;
+  }
+}
+@media screen and (min-width: 480px) {
+  body {
+    background: #71d3e9;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    background: #8971e9;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    background: #d571e9;
+  }
+}
+@media screen and (min-width: 1366px) {
+  body {
+    background: #8171e9;
+  }
+}
+
+/* @media screen and (max-width: 1366) {
+  body {
+    background: pink;
+  }
+}
+@media screen and (max-width: 1024) {
+  body {
+    background: rgb(255, 74, 105);
+  }
+} */
+/* Exact width */
+@media (width: 360px) {
+  div {
+    color: red;
+  }
+}
+/* Media query */
+@media screen and (min-width: 900px) {
+  div {
+    color: red;
+  }
+}
+/* Minimum width */
+@media (min-width: 35rem) {
+  div {
+    background: yellow;
+  }
+}
+/* Maximum width */
+@media (max-width: 50rem) {
+  div {
+    border: 2px solid blue;
+  }
+}
+/* Exact height */
+@media (height: 360px) {
+  div {
+    color: red;
+  }
+}
+/* Minimum height */
+@media (min-height: 25rem) {
+  div {
+    background: yellow;
+  }
+}
+/* Maximum height */
+@media (max-height: 40rem) {
+  div {
+    border: 2px solid blue;
+  }
+}
+@media screen and (orientation: landscape) {
+  div {
+    border: 2px solid blue;
+  }
+}
+@media screen and (orientation: portrait) {
+  div {
+    border: 2px solid blue;
+  }
+}
+/* Exact resolution */
+@media (resolution: 150dpi) {
+  p {
+    color: red;
+  }
+}
+/* Minimum resolution */
+@media (min-resolution: 72dpi) {
+  p {
+    font-size: 1.5em;
+  }
+}
+/* Maximum resolution */
+@media (max-resolution: 300dpi) {
+  p {
+    background: yellow;
+  }
+}
+@media print {
+  header {
+    display: none;
+  }
+}
+@media screen and (min-width: 360px) {
+  .original {
+    background: pink;
+  }
+}
+@media screen and (min-width: 640px) {
+  .original {
+    background: #000;
+    height: 800px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .original {
+    background: yellow;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .original {
+    background: rgb(0, 129, 96);
+  }
+}
+@media screen and (min-width: 360px) {
+  .original {
+    background: rgb(0, 129, 96);
+  }
+}
+@media screen and (min-width: 960px) {
+  .original {
+    background: rgb(108, 0, 129);
+  }
+}
+@media screen and (min-width: 1024px) {
+  /* selector{} */
 }/*# sourceMappingURL=styles.css.map */
